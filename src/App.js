@@ -1,8 +1,16 @@
 import React, { Component } from "react";
+import Card from "./components/Card";
 
 class App extends Component {
   render() {
-    return <>Homepage</>;
+    return (
+      <>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </>
+    );
   }
 }
 
