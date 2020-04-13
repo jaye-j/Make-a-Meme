@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./Header";
-import Footer from "./Footer";
 
 const BaseLayout = (props) => {
   return (
@@ -8,8 +7,6 @@ const BaseLayout = (props) => {
       <Header />
       <br />
       {props.children}
-      <br />
-      <Footer />
     </>
   );
 };
