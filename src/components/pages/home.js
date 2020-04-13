@@ -20,7 +20,11 @@ class home extends Component {
     ) : (
       <p>"Loading..."</p>
     );
-    return <>{memeMarkup}</>;
+    return (
+      <Grid container spacing={2}>
+        {memeMarkup}
+      </Grid>
+    );
   }
 }
 
