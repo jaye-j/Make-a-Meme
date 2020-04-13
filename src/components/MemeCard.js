@@ -27,14 +27,14 @@ const styles = {
 class MemeCard extends Component {
   render() {
     console.log("MEME CARD COMPONENT");
-    console.log(this.props);
+    console.log(this);
 
     return (
       <Grid item lg={2} md={3} sm={6} xs={10}>
         <Card className={styles.root}>
           <CardMedia
             className={styles.media}
-            image="http://placecorgi.com/260/180"
+            image={this.props.data.url}
             title="MemeCover"
           />
           <CardContent>
@@ -44,7 +44,7 @@ class MemeCard extends Component {
               component="h2"
               style={{ cursor: "default" }}
             >
-              [Meme Title]
+              {this.props.data.name}
             </Typography>
           </CardContent>
           <CardActions>
@@ -66,7 +66,7 @@ Card.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  meme: state.data,
+  meme: state.meme,
 });
 
 export default connect(mapStateToProps)(withStyles(styles)(MemeCard));

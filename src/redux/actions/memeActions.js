@@ -5,12 +5,19 @@ export const getMemes = () => (dispatch) => {
   dispatch({
     type: LOADING_DATA,
   });
-  axios.get("https://api.imgflip.com/get_memes").then((memes) => {
-    console.log("AXIOS REQUEST FROM MEME ACTIONS");
-    console.log(memes);
-    dispatch({
-      type: SET_MEME,
-      payload: memes.data,
-    });
-  });
+  axios
+    .get("https://api.imgflip.com/get_memes", {
+      params: {
+        limit: 10,
+      },
+    })
+    .then((res) => {
+      //console.log("AXIOS REQUEST FROM MEME ACTIONS");
+      //console.log(res.data.data.memes);
+      dispatch({
+        type: SET_MEME,
+        payload: res.data.data.memes,
+      });
+    })
+    .catch((err) => console.error(err));
 };
