@@ -4,6 +4,12 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import LinkStyles from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
+
+// PAGES
+import home from "../pages/home";
+import Favorites from "../pages/Favorites";
 
 import logo from "../../image/Logo.png";
 
@@ -18,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   logoimg: {
-    height: 100,
+    height: 65,
   },
 }));
 
@@ -29,11 +35,30 @@ const Header = (props) => {
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            <img src={logo} className={classes.logoimg} />
-          </Typography>
-          <Button color="inherit">Templates</Button>
-          <Button color="inherit">Favorites</Button>
+          <Link className={classes.title} to="/">
+            <img
+              src={logo}
+              className={classes.logoimg}
+              alt="Make-A-Meme Logo"
+            />
+          </Link>
+          <Button>
+            <LinkStyles>
+              <Link style={{ color: "#fff", textDecoration: "none" }} to="/">
+                Templates
+              </Link>
+            </LinkStyles>
+          </Button>
+          <Button>
+            <LinkStyles>
+              <Link
+                style={{ color: "#fff", textDecoration: "none" }}
+                to="/favorites"
+              >
+                Favorites
+              </Link>
+            </LinkStyles>
+          </Button>
         </Toolbar>
       </AppBar>
     </>

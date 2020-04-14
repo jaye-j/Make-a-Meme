@@ -30,27 +30,25 @@ class MemeCard extends Component {
     console.log(this);
 
     return (
-      <Grid item lg={2} md={3} sm={6} xs={10}>
+      <Grid item lg={4} md={3} sm={6} xs={10}>
         <Card className={styles.root}>
-          <CardMedia
-            className={styles.media}
-            image={this.props.data.url}
-            title="MemeCover"
-          />
+          {/* <CardMedia className={styles.media} image={this.props.data.url} /> */}
+          <img style={{ height: 200 }} src={this.props.data.url} />
           <CardContent>
             <Typography
               gutterBottom
               variant="h5"
               component="h2"
+              color="primary"
               style={{ cursor: "default" }}
             >
               {this.props.data.name}
             </Typography>
           </CardContent>
           <CardActions>
-            <a>
+            <Button>
               <StarBorderIcon />
-            </a>
+            </Button>
             <Button size="small" color="primary">
               Create
             </Button>

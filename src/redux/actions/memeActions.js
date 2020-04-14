@@ -7,9 +7,7 @@ export const getMemes = () => (dispatch) => {
   });
   axios
     .get("https://api.imgflip.com/get_memes", {
-      params: {
-        limit: 10,
-      },
+      params: {},
     })
     .then((res) => {
       //console.log("AXIOS REQUEST FROM MEME ACTIONS");
