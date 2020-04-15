@@ -95,7 +95,7 @@ class home extends Component {
               {"<"}
             </Button>
           ) : null}
-          Page: {this.state.page}/10
+          <div style={{ color: "#2A7FC0" }}>Page: {this.state.page}/10</div>
           {this.state.page < 10 ? (
             <Button
               style={{

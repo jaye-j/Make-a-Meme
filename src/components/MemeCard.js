@@ -16,7 +16,7 @@ import { connect } from "react-redux";
 
 const styles = {
   root: {
-    maxWidth: 345,
+    maxWidth: 330,
     margin: 5,
   },
   media: {
@@ -32,8 +32,22 @@ class MemeCard extends Component {
     return (
       <Grid item lg={4} md={3} sm={6} xs={10}>
         <Card className={styles.root}>
-          {/* <CardMedia className={styles.media} image={this.props.data.url} /> */}
-          <img style={{ height: 200 }} src={this.props.data.url} />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              style={{
+                height: 250,
+                border: "solid 1px black",
+                marginTop: "10px",
+              }}
+              src={this.props.data.url}
+            />
+          </div>
           <CardContent>
             <Typography
               gutterBottom
@@ -46,10 +60,14 @@ class MemeCard extends Component {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button>
-              <StarBorderIcon />
-            </Button>
-            <Button size="small" color="primary">
+            <a style={{ marginRight: "10px", marginLeft: "10px" }}>
+              <StarBorderIcon style={{ color: "#2196f3" }} />
+            </a>
+            <Button
+              style={{ border: "solid 1px #2196f3" }}
+              size="small"
+              color="primary"
+            >
               Create
             </Button>
           </CardActions>
