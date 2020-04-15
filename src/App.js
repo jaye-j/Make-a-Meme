@@ -11,8 +11,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import BaseLayout from "./components/layout/BaseLayout";
 
 // PAGES
-import Home from "./components/pages/home";
+import Home from "./components/pages/Home";
 import Favorites from "./components/pages/Favorites";
+import CreatePage from "./components/pages/CreatePage";
 
 // ======= Material UI =======
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -54,6 +55,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/favorites" component={Favorites} />
+                <Route exact path="/create" component={CreatePage} />
               </Switch>
             </BaseLayout>
           </BrowserRouter>

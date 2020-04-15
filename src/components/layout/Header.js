@@ -1,15 +1,15 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import LinkStyles from "@material-ui/core/Link";
 import { Link } from "react-router-dom";
 
 // PAGES
-import home from "../pages/home";
-import Favorites from "../pages/Favorites";
+// import Home from "../pages/Home";
+// import Favorites from "../pages/Favorites";
 
 import logo from "../../image/Logo.png";
 

@@ -22,7 +22,7 @@ export default function (state = initialState, action) {
     case FAV_MEME:
       return {
         ...state,
-        favorites: action.payload,
+        favorites: [...state.favorites, action.payload],
         loading: false,
       };
     default:

@@ -46,12 +46,6 @@ class home extends Component {
     const { memes, loading } = this.props.meme;
     const { page } = this.state;
 
-    // const theme = createMuiTheme({
-    //   palette: {
-    //     primary: green,
-    //   },
-    // });
-
     console.log(":PROPS IN HOME PAGE");
     console.log(memes); //if loading is false      // if loading is true
     // let memeMarkup = !loading ? (
@@ -73,9 +67,13 @@ class home extends Component {
 
     return (
       <>
+        {/* meme cards display start */}
         <Grid container spacing={2}>
           {memeMarkup}
         </Grid>
+        {/* meme cards display end */}
+
+        {/* pagination navigator start */}
         <div
           style={{
             display: "flex",
@@ -95,7 +93,9 @@ class home extends Component {
               {"<"}
             </Button>
           ) : null}
-          <div style={{ color: "#2A7FC0" }}>Page: {this.state.page}/10</div>
+          <div style={{ color: "#2A7FC0", fontFamily: "Roboto, sans-serif" }}>
+            Page: {this.state.page}/10
+          </div>
           {this.state.page < 10 ? (
             <Button
               style={{
@@ -109,6 +109,7 @@ class home extends Component {
             </Button>
           ) : null}
         </div>
+        {/* pagination navigator end */}
       </>
     );
   }
