@@ -44,7 +44,7 @@ class MemeCard extends Component {
     // console.log(this);
     // console.log("MEMEID");
     // console.log(this.props.data);
-    console.log(this.props.data.id);
+    // console.log(this.props.data.id);
 
     return (
       <Grid item lg={4} md={3} sm={6} xs={10}>

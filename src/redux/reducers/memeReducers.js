@@ -20,11 +20,18 @@ export default function (state = initialState, action) {
         loading: false,
       };
     case FAV_MEME:
-      return {
-        ...state,
-        favorites: [...state.favorites, action.payload],
-        loading: false,
-      };
+      let matchingFav = state.favorites.filter((favorite) => {
+        return favorite.id === action.payload.id;
+      });
+      if (matchingFav.length < 1) {
+        return {
+          ...state,
+          favorites: [...state.favorites, action.payload],
+          loading: false,
+        };
+      } else {
+        return state;
+      }
     default:
       return state;
   }
