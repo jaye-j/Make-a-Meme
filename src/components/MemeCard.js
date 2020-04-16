@@ -78,12 +78,17 @@ class MemeCard extends Component {
             </Typography>
           </CardContent>
           <CardActions>
+            {/* FAV BUTTON START */}
+
             <Button
               onClick={this.favoriteMeme}
               style={{ marginRight: "10px", marginLeft: "10px" }}
             >
               <StarBorderIcon style={{ color: "#2196f3" }} />
             </Button>
+
+            {/* FAV BUTTON END */}
+
             <Button
               style={{ border: "solid 1px #2196f3" }}
               size="small"
