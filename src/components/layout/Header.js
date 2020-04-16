@@ -35,13 +35,15 @@ const Header = (props) => {
     <>
       <AppBar position="static">
         <Toolbar>
-          <Link className={classes.title} to="/">
-            <img
-              src={logo}
-              className={classes.logoimg}
-              alt="Make-A-Meme Logo"
-            />
-          </Link>
+          <div className={classes.title}>
+            <Link to="/">
+              <img
+                src={logo}
+                className={classes.logoimg}
+                alt="Make-A-Meme Logo"
+              />
+            </Link>
+          </div>
           <Button>
             <LinkStyles>
               <Link style={{ color: "#fff", textDecoration: "none" }} to="/">
