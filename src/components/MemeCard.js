@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 // REDUX STUFF
 // import { getMemes } from "../redux/actions/memeActions";
 import { connect } from "react-redux";
-import { addFavMeme } from "../redux/actions/memeActions";
+import { addFavMeme, createMeme } from "../redux/actions/memeActions";
 
 const styles = {
   root: {
@@ -37,6 +37,13 @@ class MemeCard extends Component {
 
   favoriteMeme = () => {
     this.props.addFavMeme(this.props.data.id);
+  };
+
+  // - create new "handleCreate" function
+  // - inside it fires this.props.createMem(this.props.data)
+
+  handleCreate = () => {
+    this.props.createMeme(this.props.data);
   };
 
   render() {
@@ -93,6 +100,7 @@ class MemeCard extends Component {
               style={{ border: "solid 1px #2196f3" }}
               size="small"
               color="primary"
+              onClick={this.handleCreate}
             >
               <Link
                 style={{ color: "#2196f3", textDecoration: "none" }}
@@ -111,12 +119,13 @@ class MemeCard extends Component {
 Card.propTypes = {
   meme: PropTypes.object.isRequired,
   addFavMeme: PropTypes.func.isRequired,
+  createMeme: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   meme: state.meme,
 });
 
-export default connect(mapStateToProps, { addFavMeme })(
+export default connect(mapStateToProps, { addFavMeme, createMeme })(
   withStyles(styles)(MemeCard)
 );

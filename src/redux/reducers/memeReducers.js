@@ -1,9 +1,10 @@
-import { LOADING_DATA, SET_MEME, FAV_MEME } from "../types";
+import { LOADING_DATA, SET_MEME, FAV_MEME, CREATE_MEME } from "../types";
 
 const initialState = {
   loading: false,
   memes: [],
   favorites: [],
+  singleMeme: {},
 };
 
 export default function (state = initialState, action) {
@@ -32,6 +33,12 @@ export default function (state = initialState, action) {
       } else {
         return state;
       }
+    case CREATE_MEME:
+      return {
+        ...state,
+        singleMeme: action.payload,
+        loading: false,
+      };
     default:
       return state;
   }

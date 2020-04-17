@@ -1,5 +1,14 @@
-import { LOADING_DATA, SET_MEME, FAV_MEME } from "../types";
+import { LOADING_DATA, SET_MEME, FAV_MEME, CREATE_MEME } from "../types";
 import axios from "axios";
+
+export const createMeme = (data) => (dispatch) => {
+  console.log("CREATING MEME");
+  console.log(data);
+  dispatch({
+    type: CREATE_MEME,
+    payload: data,
+  });
+};
 
 export const getMemes = () => (dispatch) => {
   dispatch({
